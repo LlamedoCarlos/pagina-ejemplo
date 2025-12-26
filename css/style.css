@@ -1,0 +1,464 @@
+/* ========================================
+   ESTILOS GENERALES
+   ======================================== */
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* ========================================
+   BARRA DE NAVEGACIÓN
+   ======================================== */
+
+/* Logo */
+.logo img {
+    height: 74px;
+}
+
+/* Contenedor principal de la barra de navegación */
+.barra-navegacion {
+  display: flex;
+  position: fixed;
+  top: 0;
+  background-color: white;
+  width: 100%;
+  height: 70px;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.4s;
+  z-index: 1000; /* Mantiene la barra siempre visible sobre otros elementos */
+}
+
+/* Lista del menú de navegación */
+.barra-navegacion ul {
+  display: flex;
+  list-style-type: none;
+}
+
+/* Enlaces del menú de navegación */
+.barra-navegacion ul li a {
+  text-decoration: none;
+  margin: 0 10px;
+  color: rgb(0, 0, 0);
+  font-family: cursive;
+  transition: color 0.3s;
+}
+
+/* Efecto hover en los enlaces */
+.barra-navegacion ul li a:hover {
+  color: rgb(85, 84, 84);
+}
+
+/* Barra de navegación activa (cuando se hace scroll) */
+.barra-navegacion.activa {
+  background-color: black;
+}
+
+/* Enlaces cuando la barra está activa */
+.barra-navegacion.activa ul li a {
+  color: white;
+}
+
+
+/* ========================================
+   ENCABEZADO / HERO SECTION
+   ======================================== */
+
+/* Contenedor principal del encabezado */
+.encabezado {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+/* Título principal */
+.titulo {
+  font-size: 2.5rem;
+  color: white;
+  letter-spacing: 0.277em;
+  font-weight: 300;
+  text-align: center;
+}
+
+/* Video de fondo */
+.video-fondo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(30%); /* Oscurece el video para mejor legibilidad */
+}
+
+/* Botón para pausar/reproducir el video */
+.boton-pausar {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 5px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s;
+}
+
+.boton-pausar:hover {
+  background: white;
+  color: black;
+}
+
+
+/* ========================================
+   CARRUSEL DE IMÁGENES
+   ======================================== */
+
+/* Contenedor del carrusel */
+.contenedor-carrusel {
+  position: relative;
+  width: 600px;
+  max-width: 90%;
+  margin: 30px 0;
+}
+
+/* Carrusel principal */
+.carrusel {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Imágenes del carrusel */
+.imagen-carrusel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0; /* Oculta todas las imágenes por defecto */
+  filter: grayscale(100%); /* Efecto blanco y negro */
+  transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+/* Imagen activa (visible) */
+.imagen-carrusel.activa {
+  opacity: 1;
+}
+
+/* Efecto hover: muestra colores */
+.contenedor-carrusel:hover .imagen-carrusel {
+  filter: grayscale(0%);
+}
+
+/* Botones de navegación del carrusel */
+.boton-carrusel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.boton-carrusel:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Botón anterior */
+.boton-carrusel.anterior {
+  left: 10px;
+}
+
+/* Botón siguiente */
+.boton-carrusel.siguiente {
+  right: 10px;
+}
+
+/* Indicadores de puntos */
+.puntos-carrusel {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+/* Punto individual */
+.punto {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+/* Punto activo */
+.punto.activo {
+  background: white;
+}
+
+
+/* ========================================
+   CONTENIDO PRINCIPAL
+   ======================================== */
+
+.contenido-principal {
+  position: relative;
+}
+
+
+/* ========================================
+   SECCIÓN DE TESTIMONIOS
+   ======================================== */
+
+.testimonios {
+  padding: 80px 20px;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+/* Título de sección */
+.titulo-seccion {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #333;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+/* Contenedor de tarjetas de testimonios */
+.contenedor-testimonios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tarjeta individual de testimonio */
+.tarjeta-testimonio {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto hover en tarjetas */
+.tarjeta-testimonio:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen del cliente */
+.imagen-testimonio {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+}
+
+/* Colorea la imagen al hacer hover en la tarjeta */
+.tarjeta-testimonio:hover .imagen-testimonio {
+  filter: grayscale(0%);
+}
+
+/* Texto del testimonio */
+.texto-testimonio {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Nombre del cliente */
+.nombre-testimonio {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Rol o cargo del cliente */
+.rol-testimonio {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+
+/* ========================================
+   SECCIÓN DE CONTACTO
+   ======================================== */
+
+.contacto {
+  padding: 80px 20px;
+  background-color: #fff;
+}
+
+/* Contenedor principal de contacto */
+.contenedor-contacto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Formulario de contacto */
+.formulario-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Inputs y textarea del formulario */
+.formulario-contacto input,
+.formulario-contacto textarea {
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+/* Foco en inputs */
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus {
+  outline: none;
+  border-color: rgb(132, 103, 218);
+}
+
+/* Botón de enviar */
+.boton-enviar {
+  padding: 15px 30px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.boton-enviar:hover {
+  background-color: rgb(132, 103, 218);
+  transform: translateY(-3px);
+}
+
+/* Información de contacto */
+.info-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Item individual de contacto */
+.item-contacto {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Iconos de contacto */
+.item-contacto i {
+  font-size: 1.8rem;
+  color: rgb(132, 103, 218);
+}
+
+/* Enlaces de redes sociales */
+.enlaces-sociales {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.enlaces-sociales a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  color: #333;
+  font-size: 1.5rem;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.enlaces-sociales a:hover {
+  background-color: rgb(132, 103, 218);
+  color: white;
+  transform: translateY(-5px);
+}
+
+
+/* ========================================
+   PIE DE PÁGINA
+   ======================================== */
+
+.pie-pagina {
+  background-color: #222;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+/* Contenido del footer */
+.contenido-footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Enlaces del footer */
+.enlaces-footer {
+  display: flex;
+  gap: 20px;
+}
+
+.enlaces-footer a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.enlaces-footer a:hover {
+  color: rgb(132, 103, 218);
+}
+
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 768px) {
+  .contenido-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+}

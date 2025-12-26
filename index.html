@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Hojas de estilo -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+    <title>Carlos Llamedo - Portafolio</title>
+</head>
+<body>
+    <!-- ========== BARRA DE NAVEGACIÓN ========== -->
+    <nav class="barra-navegacion">
+        <!-- Logo -->
+        <a class="logo" href="/index.html">
+            <img src="./img/Logo Para Marca de Ropa Moderno Blanco y Negro.png" alt="logo" />
+        </a>
+
+        <!-- Menú de navegación -->
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- ========== PRECARGADOR ========== -->
+    <div class="precargador">
+        <img src="preloader.gif" alt="preloader">
+    </div>
+
+    <!-- ========== ENCABEZADO / HERO ========== -->
+    <header class="encabezado">
+        <!-- Video de fondo -->
+        <video class="video-fondo" muted autoplay loop src="./videos/background-video.mp4"></video>
+        
+        <!-- Título principal -->
+        <h1 class="titulo">Carlos Llamedo</h1>
+        
+        <!-- Carrusel de imágenes -->
+        <div class="contenedor-carrusel">
+            <div class="carrusel">
+                <img src="./img/imagen1.jpg" alt="Imagen 1" class="imagen-carrusel activa">
+                <img src="./img/imagen2.jpg" alt="Imagen 2" class="imagen-carrusel">
+                <img src="./img/imagen3.jpg" alt="Imagen 3" class="imagen-carrusel">
+            </div>
+            
+            <!-- Botones de navegación del carrusel -->
+            <button class="boton-carrusel anterior">
+                <i class='bx bx-chevron-left'></i>
+            </button>
+            <button class="boton-carrusel siguiente">
+                <i class='bx bx-chevron-right'></i>
+            </button>
+            
+            <!-- Indicadores de puntos -->
+            <div class="puntos-carrusel">
+                <span class="punto activo" data-slide="0"></span>
+                <span class="punto" data-slide="1"></span>
+                <span class="punto" data-slide="2"></span>
+            </div>
+        </div>
+        
+        <!-- Botón para pausar/reproducir video -->
+        <button class="boton-pausar">
+            <i class='bx bx-pause' aria-hidden="true"></i>
+        </button>
+    </header>
+
+    <!-- ========== CONTENIDO PRINCIPAL ========== -->
+    <main class="contenido-principal">
+        
+        <!-- ========== SECCIÓN DE TESTIMONIOS ========== -->
+        <section class="testimonios">
+            <h2 class="titulo-seccion">Lo Que Dicen Nuestros Clientes</h2>
+            
+            <div class="contenedor-testimonios">
+                <!-- Tarjeta de testimonio 1 -->
+                <div class="tarjeta-testimonio">
+                    <img src="./img/photopeople.jpg" alt="Cliente 1" class="imagen-testimonio">
+                    <p class="texto-testimonio">"Excelente trabajo, superó todas mis expectativas. Muy profesional y creativo."</p>
+                    <h4 class="nombre-testimonio">María González</h4>
+                    <p class="rol-testimonio">CEO, Tech Solutions</p>
+                </div>
+                
+                <!-- Tarjeta de testimonio 2 -->
+                <div class="tarjeta-testimonio">
+                    <img src="./img/photopeople.jpg" alt="Cliente 2" class="imagen-testimonio">
+                    <p class="texto-testimonio">"Increíble atención al detalle. El resultado final fue exactamente lo que buscábamos."</p>
+                    <h4 class="nombre-testimonio">Juan Pérez</h4>
+                    <p class="rol-testimonio">Director Creativo</p>
+                </div>
+                
+                <!-- Tarjeta de testimonio 3 -->
+                <div class="tarjeta-testimonio">
+                    <img src="./img/photopeople.jpg" alt="Cliente 3" class="imagen-testimonio">
+                    <p class="texto-testimonio">"Profesionalismo de primer nivel. Lo recomiendo sin dudarlo."</p>
+                    <h4 class="nombre-testimonio">Ana Martínez</h4>
+                    <p class="rol-testimonio">Fundadora, Studio M</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECCIÓN DE CONTACTO ========== -->
+        <section class="contacto">
+            <h2 class="titulo-seccion">Contáctame</h2>
+            
+            <div class="contenedor-contacto">
+                <!-- Formulario de contacto -->
+                <form class="formulario-contacto">
+                    <input type="text" placeholder="Nombre" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea placeholder="Mensaje" rows="5" required></textarea>
+                    <button type="submit" class="boton-enviar">Enviar Mensaje</button>
+                </form>
+                
+                <!-- Información de contacto -->
+                <div class="info-contacto">
+                    <!-- Email -->
+                    <div class="item-contacto">
+                        <i class='bx bx-envelope'></i>
+                        <p>llamedocarlos.tech@gmail.com</p>
+                    </div>
+                    
+                    <!-- Teléfono -->
+                    <div class="item-contacto">
+                        <i class='bx bx-phone'></i>
+                        <p>+34 123 456 789</p>
+                    </div>
+                    
+                    <!-- Ubicación -->
+                    <div class="item-contacto">
+                        <i class='bx bx-location-plus'></i>
+                        <p>Buenos Aires, Argentina</p>
+                    </div>
+                    
+                    <!-- Redes sociales -->
+                    <div class="enlaces-sociales">
+                        <a href="https://www.instagram.com/andres_llamedo"><i class='bx bxl-instagram'></i></a>
+                        <a href="https://www.linkedin.com/in/carlos-llamedo"><i class='bx bxl-linkedin'></i></a>
+                        <a href="https://github.com/LlamedoCarlos"><i class='bx bxl-github'></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== PIE DE PÁGINA ========== -->
+    <footer class="pie-pagina">
+        <div class="contenido-footer">
+            <p>&copy; 2025 Carlos Llamedo. Todos los derechos reservados.</p>
+            
+            <!-- Enlaces del footer -->
+            <div class="enlaces-footer">
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Términos de Uso</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script src="/js/index.js"></script>
+    <script src="/js/video.js"></script>
+    <script src="/js/carousel.js"></script>
+</body>
+</html>
