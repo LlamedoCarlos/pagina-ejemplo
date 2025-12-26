@@ -99,3 +99,54 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+
+// ========== VALIDACIÓN DEL FORMULARIO DE CONTACTO ==========
+const formularioContacto = document.getElementById("formContacto");
+const mensajeExito = document.getElementById("mensajeExito");
+
+formularioContacto.addEventListener("submit", (e) => {
+  e.preventDefault();
+  
+  // Obtener valores de los campos
+  const nombre = document.getElementById("nombre");
+  const email = document.getElementById("email");
+  const mensaje = document.getElementById("mensaje");
+  
+  // Resetear estilos de error
+  [nombre, email, mensaje].forEach(campo => {
+    campo.classList.remove("error");
+  });
+  
+  let esValido = true;
+  
+  // Validar nombre (mínimo 2 caracteres)
+  if (nombre.value.trim().length < 2) {
+    nombre.classList.add("error");
+    esValido = false;
+  }
+  
+  // Validar email
+  const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!regexEmail.test(email.value.trim())) {
+    email.classList.add("error");
+    esValido = false;
+  }
+  
+  // Validar mensaje (mínimo 10 caracteres)
+  if (mensaje.value.trim().length < 10) {
+    mensaje.classList.add("error");
+    esValido = false;
+  }
+  
+  // Si todo es válido, mostrar mensaje de éxito
+  if (esValido) {
+    mensajeExito.classList.add("mostrar");
+    formularioContacto.reset();
+    
+    // Ocultar mensaje después de 5 segundos
+    setTimeout(() => {
+      mensajeExito.classList.remove("mostrar");
+    }, 5000);
+  }
+});

@@ -5,11 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Sitio web personal de Carlos Llamedo. Un proyecto experimental hecho por curiosidad y ganas de crear algo interesante con HTML, CSS y JavaScript.">
+    <meta name="keywords" content="Carlos Llamedo, desarrollo web, diseño web, HTML, CSS, JavaScript, proyecto personal">
+    <meta name="author" content="Carlos Llamedo">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Carlos Llamedo - Sitio Web Personal">
+    <meta property="og:description" content="Un proyecto web experimental hecho con HTML, CSS y JavaScript vanilla.">
+    <meta property="og:url" content="https://github.com/LlamedoCarlos">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Carlos Llamedo - Sitio Web Personal">
+    <meta name="twitter:description" content="Un proyecto web experimental hecho con HTML, CSS y JavaScript vanilla.">
+    
     <!-- Hojas de estilo -->
     <link rel="stylesheet" href="/css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     
-    <title>Carlos Llamedo - Portafolio</title>
+    <title>Carlos Llamedo - Sitio Web Personal</title>
 </head>
 <body>
     <!-- ========== BARRA DE NAVEGACIÓN ========== -->
@@ -115,11 +131,13 @@
             
             <div class="contenedor-contacto">
                 <!-- Formulario de contacto -->
-                <form class="formulario-contacto">
-                    <input type="text" placeholder="Nombre" required>
-                    <input type="email" placeholder="Email" required>
-                    <textarea placeholder="Mensaje" rows="5" required></textarea>
+                <form class="formulario-contacto" id="formContacto">
+                    <p class="nota-demo">📝 Este es un formulario de demostración. No se enviarán mensajes reales.</p>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" required minlength="2">
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <textarea id="mensaje" name="mensaje" placeholder="Mensaje" rows="5" required minlength="10"></textarea>
                     <button type="submit" class="boton-enviar">Enviar Mensaje</button>
+                    <div class="mensaje-exito" id="mensajeExito">✅ ¡Mensaje enviado con éxito! (Demo)</div>
                 </form>
                 
                 <!-- Información de contacto -->
