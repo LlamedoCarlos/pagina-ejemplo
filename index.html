@@ -15,16 +15,21 @@
     <!-- ========== BARRA DE NAVEGACIÓN ========== -->
     <nav class="barra-navegacion">
         <!-- Logo -->
-        <a class="logo" href="/index.html">
+        <a class="logo" href="#inicio">
             <img src="./img/Logo Para Marca de Ropa Moderno Blanco y Negro.png" alt="logo" />
         </a>
 
         <!-- Menú de navegación -->
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contacto</a></li>
+        <ul class="menu-navegacion">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
         </ul>
+
+        <!-- Botón hamburguesa para móviles -->
+        <button class="boton-hamburguesa" aria-label="Menú">
+            <i class='bx bx-menu'></i>
+        </button>
     </nav>
 
     <!-- ========== PRECARGADOR ========== -->
@@ -33,7 +38,7 @@
     </div>
 
     <!-- ========== ENCABEZADO / HERO ========== -->
-    <header class="encabezado">
+    <header class="encabezado" id="inicio">
         <!-- Video de fondo -->
         <video class="video-fondo" muted autoplay loop src="./videos/background-video.mp4"></video>
         
@@ -74,7 +79,7 @@
     <main class="contenido-principal">
         
         <!-- ========== SECCIÓN DE TESTIMONIOS ========== -->
-        <section class="testimonios">
+        <section class="testimonios" id="testimonios">
             <h2 class="titulo-seccion">Lo Que Dicen Nuestros Clientes</h2>
             
             <div class="contenedor-testimonios">
@@ -105,7 +110,7 @@
         </section>
 
         <!-- ========== SECCIÓN DE CONTACTO ========== -->
-        <section class="contacto">
+        <section class="contacto" id="contacto">
             <h2 class="titulo-seccion">Contáctame</h2>
             
             <div class="contenedor-contacto">
@@ -161,9 +166,15 @@
         </div>
     </footer>
 
+    <!-- ========== BOTÓN VOLVER ARRIBA ========== -->
+    <button class="boton-volver-arriba" id="volverArriba" aria-label="Volver arriba">
+        <i class='bx bx-chevron-up'></i>
+    </button>
+
     <!-- ========== SCRIPTS ========== -->
     <script src="/js/index.js"></script>
     <script src="/js/video.js"></script>
     <script src="/js/carousel.js"></script>
+    <script src="/js/navegacion.js"></script>
 </body>
 </html>
